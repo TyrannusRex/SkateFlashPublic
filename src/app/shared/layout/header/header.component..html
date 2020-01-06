@@ -1,0 +1,54 @@
+<!-- <nav style="width: 100%; height: 60px; background: #000;"></nav> -->
+<!-- style="background: rgba(0, 0, 0, 0.1);" -->
+<nav id="menu" class="navbar navbar-expand-lg fixed-top navbar-dark bg-init">
+    <a class="navbar-brand" href="#">Skate <br> Flash</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/home" routerLinkActive="router-link-active" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Noticias & Eventos</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Tienda
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+        <div style="margin-right: 5px;">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="mr-3 ml-3">
+            <span>Login </span>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+            <!-- <form class="form-inline text-right justify-content-end">
+                <input class="form-control mr-sm-1 col-3" type="mail" placeholder="Correo">
+                <input class="form-control mr-sm-1 col-3" type="password" placeholder="Contraseña">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ingresar</button>
+            </form> -->
+        </div>
+        <div><em class="fa fa-shopping-cart" aria-hidden="true"></em></div>
+
+    </div>
+</nav>

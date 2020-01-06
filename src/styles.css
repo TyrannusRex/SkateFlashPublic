@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.map-container {
+    width: 100%;
+    height: 350px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#map-box {
+    width: 50%;
+    height: 350px;
+}
+
+.info-footer {
+    width: 50%;
+    height: 350px;
+    background: #000;
+}
+
+.icon-footer {
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column-reverse;
+    }
+
+    #map-box {
+        width: 100%;
+    }
+
+    .info-footer {
+        width: 100%;
+    }
+}
+
+.container-products {
+    overflow-y: auto;
+    background: #ececec;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-products::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+
+.container-products::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
