@@ -4,16 +4,18 @@
     <div style="margin: 0 auto; max-width: 1200px; text-align: left;">
         <section class="news" style="background: #fff;">
             <h3>Noticias</h3>
-            <div style="width: 100%; height: 350px; margin-bottom: 2px; display: flex; flex-direction: row; flex-wrap: wrap;">
-                <div style="height: 100%; width: 60%;"> <img src="../../assets/img/news/soroush-karimi-M4C5tzTeFmE-unsplash.jpg" alt="" height="100%"></div>
-                <div style="width: 40%; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-around;">
-                    <span>With Olympic Doors Open, a 14-Year-Old Skateboarder Enters a New World</span>
-                    <p>When the International Olympic Committee decided to admit skateboarding without setting age requirements, the game changed for a lot of young girls.</p>
-                    <p>By SCOTT CACCIOLA</p>
+            <div class="cont-main-new">
+                <div class="img-main-new"> <img
+                        src="../../assets/img/news/soroush-karimi-M4C5tzTeFmE-unsplash.jpg" alt="" class="img-main"></div>
+                <div class="txt-main-new">
+                    <span class="title-main-new">With Olympic Doors Open, a 14-Year-Old Skateboarder Enters a New World</span>
+                    <p>When the International Olympic Committee decided to admit skateboarding without setting age
+                        requirements, the game changed for a lot of young girls.</p>
+                    <p class="autor-new">By SCOTT CACCIOLA</p>
                 </div>
             </div>
-            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
-                <div class="" style="width: 76%; display: flex; flex-direction: column; flex-flow: row wrap; overflow-x: auto; max-height: 600px;">
+            <div class="container-news">
+                <div class="last-news">
                     <h5>Las útlimas noticias</h5>
                     <ol style="width: 100%; overflow-x: hidden;">
                         <li class="container-new" *ngFor="let new of listNews">
@@ -21,42 +23,33 @@
                             <div class="content-news">
                                 <span class="title-news">{{new.title}}</span>
                                 <p class="description-new">{{new.description}}</p>
-                                <span>BY {{new.autor}}</span>
+                                <span class="autor-new">BY {{new.autor}}</span>
                             </div>
                             <span class="date-news">{{new.date}}</span>
                         </li>
                     </ol>
-                    
+
                 </div>
-                <div class="" style="width: 22%;">
+                <div class="cont-top-news">
                     Las noticias más visitadas
-                    <div style="width: 100%; height: 120px; background: magenta;">Top new 1</div>
-                    <div style="width: 100%; height: 120px; background: magenta;">Top new 1</div>
-                    <div style="width: 100%; height: 120px; background: magenta;">Top new 1</div>
-                    <div style="width: 100%; height: 120px; background: magenta;">Top new 1</div>
-                    <div style="width: 100%; height: 120px; background: magenta;">Top new 1</div>
+                    <div *ngFor="let topNew of listTopNews" class="container-top-new">
+                        <img [src]="topNew.img" class="img-top-news" alt="">
+                        <p class="title-top">{{topNew.title}}</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="events" style="background: #fff;">
             <h3>Eventos</h3>
-            <div style="width: 100%; background: black; height: 300px; color: #fff; margin-bottom: 10px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>imagen</div>
-                <span>name, lugar, Fecha</span>
+            <div *ngFor="let event of listevents" class="event">
+                <img [src]="event.flayer" alt="" class="img-event">
+                <div class="txt-event">
+                    <p>{{event.date}}</p>
+                    <p>{{event.name}}</p>
+                    <p>{{event.address}}</p>
+                    <p><a [href]="event.tickets">Adquiere tus boletos</a></p>
+                </div>
             </div>
-            <div style="width: 100%; background: black; height: 300px; color: #fff; margin-bottom: 10px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>imagen</div>
-                <span>name, lugar, Fecha</span>
-            </div>
-            <div style="width: 100%; background: black; height: 300px; color: #fff; margin-bottom: 10px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>imagen</div>
-                <span>name, lugar, Fecha</span>
-            </div>
-            <div style="width: 100%; background: black; height: 300px; color: #fff; margin-bottom: 10px; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>imagen</div>
-                <span>name, lugar, Fecha</span>
-            </div>
-            
         </section>
     </div>
 </div>

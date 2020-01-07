@@ -7,6 +7,72 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NewEventsComponent implements OnInit {
+
+    listevents = [
+        {
+            date: '03/Feb/2020',
+            flayer: '../../assets/img/news/events/The-Bay-FLYER-SFAC-Tour-Stop-7-1-1.jpg',
+            name: 'SKATE FOR A CAUSE',
+            address: 'Rapid City Skatepark, 209 New York St',
+            tickets: 'www.ticketmaster.com.mx/arrancones-nocturnos-mexico-01-02-2020/event/140057837A9F12F7'
+        },
+        {
+            date: '15/Mar/2020',
+            flayer: '../../assets/img/news/events/clashatClairemontFest104_defrT.png',
+            name: 'CLASH AT CLAIREMONT',
+            address: '3401 Clairemont Drive, San Diego, 92117',
+            tickets: 'www.ticketmaster.com.mx/arrancones-nocturnos-mexico-01-02-2020/event/140057837A9F12F7'
+        },
+        {
+            date: '21/Sep/2020',
+            flayer: '../../assets/img/news/events/CORNERSTONE_SocialKV-SK8Liborius1.png',
+            name: 'RED BULL CORNER STONE',
+            address: 'St. Loius, MO',
+            tickets: 'www.ticketmaster.com.mx/arrancones-nocturnos-mexico-01-02-2020/event/140057837A9F12F7'
+        }
+    ];
+    listTopNews = [
+        {
+            id_new: '12',
+            date: '24/10/2019',
+            img: '../../assets/img/news/26sporting-mediumThreeByTwo210.jpg',
+            title: 'How Skateboarding Helped Me Cope With War',
+            description: 'To relieve the stress of military service in Iraq, a Marine welcomed the distraction of riding her cheap board.',
+            autor: 'TERESA FAZIO'
+        },
+        {
+            id_new: '21',
+            date: '12/03/2012',
+            img: '../../assets/img/news/10LIST1-mediumThreeByTwo210.jpg',
+            title: 'What Skateboard Champion Nyjah Huston Likes to Wear',
+            description: 'The X Games gold medalist likes skinny jeans, leather jackets and purple bracelets',
+            autor: 'BEE SHAPIRO'
+        },
+        {
+            id_new: '24',
+            date: '27/09/2018',
+            img: '../../assets/img/news/07THELOOK1-superJumbo.jpg',
+            title: 'A Place for Us to Skate',
+            description: 'Unity is a queer skateboarding collective in California, designed as a haven from the sometimes-hostile environment the sport has fostered.',
+            autor: 'RYAN SHOROSKY, NICOLA FUMO and EVE LYONS'
+        },
+        {
+            id_new: '24',
+            date: '30/08/2019',
+            img: '../../assets/img/news/02ANDERSON3-WEB-superJumbo.jpg',
+            title: 'Brian Anderson, Skateboarding Star, Comes...',
+            description: 'Mr. Anderson, 40, becomes the most prominent professional athlete to come out as gay in a sport once considered tinged with homophobia.',
+            autor: 'CONOR DOUGHERTY'
+        },
+        {
+            id_new: '24',
+            date: '18/11/2019',
+            img: '../../assets/img/news/31FIT-CITY-slide-JH20-superJumbo.jpg',
+            title: 'Sisterhood of the Skateboard',
+            description: 'In New York City, the Brujas, a crew of female skateboarders, are challenging the sport’s culture and using it as a tool for community activism.',
+            autor: 'NOAH REMNICK'
+        }
+    ];
     listNews = [
         {
             id_new: '01',
