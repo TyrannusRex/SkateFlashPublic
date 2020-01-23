@@ -8,7 +8,12 @@ import { HeaderComponent } from './shared';
 import { FooterComponent } from './shared/';
 import { HomeComponent } from './home/home.component';
 import { NewEventsComponent } from './news-events';
+import { StoreComponent } from './store/store.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core';
 
 
 @NgModule({
@@ -17,14 +22,21 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NewEventsComponent
+    NewEventsComponent,
+    StoreComponent
   ],
   imports: [
     NgbModule,
+    NgxPaginationModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CoreModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    HttpClientModule
+  ]
 })
 export class AppModule { }

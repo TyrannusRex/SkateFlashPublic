@@ -3,7 +3,7 @@
         width="100%" title="Photo by Julien Lanoy on Unsplash">
 </div>
 <!-- Seccion de Promos -->
-<section class="sale w-100" style="height: 700px; max-height: 700px;">
+<section class="sale w-100" style="height: 700px; max-height: 700px; margin-top: 30px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -11,7 +11,7 @@
                 <ngb-carousel *ngIf="event_list" style="background: #000;">
                     <ng-template ngbSlide *ngFor="let event of current_events">
                         <div style="max-height: 600px; height: 600px; text-align: center; align-items: center;">
-                            <img [src]="event.img" alt="Random slide" width="100%" style="opacity: 0.3;">
+                            <img [src]="event.img" alt="Random slide" class="img-slider" width="100%">
                         </div>
                         <div class="carousel-caption">
                             <h3>{{ event.eventLocation }}</h3>

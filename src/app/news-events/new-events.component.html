@@ -1,4 +1,4 @@
-<div style="height: 86px; width: 100%; background-color: #E0E0E0;"></div>
+<div style="height: 86px; width: 100%; background-color: #e0e0e0;"></div>
 <!-- <div style="width: 100%; text-align: center; background-image: url(../../../../assets/img/matteo-paganelli-FhHGPO3aMsU-unsplash1.jpg); background-size: cover;"> -->
 <div style="width: 100%; text-align: center;">
     <div style="margin: 0 auto; max-width: 1200px; text-align: left;">
@@ -44,8 +44,8 @@
             <div *ngFor="let event of listevents" class="event">
                 <img [src]="event.flayer" alt="" class="img-event">
                 <div class="txt-event">
-                    <p>{{event.date}}</p>
-                    <p>{{event.name}}</p>
+                    <p style="font-size:xx-large; font-weight: bold;">{{event.date}}</p>
+                    <p style="font-size: large;">{{event.name}}</p>
                     <p>{{event.address}}</p>
                     <p><a [href]="event.tickets">Adquiere tus boletos</a></p>
                 </div>

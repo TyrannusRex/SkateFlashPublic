@@ -1,0 +1,130 @@
+<div style="height: 86px; width: 100%; background-color: #e0e0e0;"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-init">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/noticias">Shop</a>
+            </li>
+            <li class="nav-item">
+                <!-- <a class="nav-link" routerLink="/home" routerLinkActive="router-link-active" >Tenis <span class="sr-only">(current)</span></a> -->
+                <a class="nav-link" routerLink="/home" routerLinkActive="router-link-active" >Tenis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Patinetas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Patines</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Scooters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Ropa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Mochilas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/noticias">Accesorios</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" routerLink="/store" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Tienda
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+</nav>
+<div class="" style="display: flex; flex-direction: row;">
+    <div style="width: 20%; height: 700px;">
+        <h5 style="padding: 10px; background: #f6f6f6;">Catálogo</h5>
+        <div style="margin-top: 20px; background: #f6f6f6; padding: 0 10px;">
+            <span>Filtros seleccionados:</span>
+            <div *ngFor="let filter of filterSelected" style="width: 100%; display: flex; flex-direction: row; justify-content: space-between;"><span>{{filter}}</span> <button style="border-radius: 50%; align-items: center; border: none;">x</button></div>
+        </div>
+        <div *ngFor="let filter of listFilter" style="margin-top: 20px; padding: 0 10px; display: flex; flex-direction: column; height: 150px; border-bottom: 1px solid #c9c9c9; overflow-y: auto;">
+            <h6>{{filter.titleFilter}}</h6>
+            <label *ngFor="let option of filter.listOption" for="filter-prod">
+                <input type="checkbox" style="margin-right: 10px;">
+                <span>{{option}}</span>
+            </label>
+        </div>
+    </div>
+    <div style="width: 80%; padding: 5px 10px;">
+        <div style="background: #000; color: #fff; border-bottom: 5px solid #cecece; padding: 5px 10px;">
+            <h3>Titulo</h3>
+            <p> Tablas, patinetas completas, patinetas largas, ven a la tienda o pide que tenemos entregas en todo México.</p>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; padding: 5px 10px;">
+            <span>Titulo</span>
+            <span>Hay {{totalProducts}} productos</span>
+        </div>
+        <div style="padding: 5px 10px; display: flex; flex-direction: row; flex-wrap: wrap;">
+            <div class=" col-lg-4 col-md-12">
+                <label for="order-by">Ordernar por:</label>
+                <select name="order-by" id="order-by" class="form-control">
+                    <option value="" selected disabled>--Seleccionar orden--</option>
+                    <option value="val1">Precio menor a mayor</option>
+                    <option value="val2">Precio mayor a menor</option>
+                    <option value="val3">Nombre de A a Z</option>
+                    <option value="val4">Nombre de Z a A</option>
+                    <option value="val5">Mejor calificación</option>
+                </select>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <label for="order-by">Mostrar:</label>
+                <select name="order-by" id="order-by" class="form-control">
+                    <!-- <option value="" selected disabled>--Seleccionar una cantidad--</option> -->
+                    <option value="val1" selected>15</option>
+                    <option value="val2">20</option>
+                    <option value="val3">30</option>
+                    <option value=50>50</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="d-flex justify-content-center">
+            <div id="PaginationElement"></div>
+            <pagination-controls class="pagination" nextLabel="Siguiente" previousLabel="Anterior" responsive="true"
+                (pageChange)="p = $event">
+            </pagination-controls>
+        </div>
+        <ul style="display: flex; flex-direction: row; word-wrap: break-word; flex-wrap: wrap;">
+            <li *ngFor="let product of listProducts | paginate: { itemsPerPage: 15, currentPage: p }; let i=index;"
+                style="width: 270px; height: auto; background: #f2f2f2; list-style: none; margin: 20px 20px; padding: 10px;"
+            >
+                <p style="text-align: right;"><span class="title-product">{{product.title}}</span></p>
+                <div style="text-align: center;">
+                    <div style="border-radius: 50%; height: 250px; width: 250px;">
+                        <img [src]="product.img" height="100%" width="100%" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+                <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                      <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                    </span>
+                  </ng-template>
+                  
+                  <ngb-rating [(rate)]="product.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                <p>{{product.description}}</p>
+                <p>{{product.price}}</p>
+                <button class="btn-product"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Agregar al carrito</button>
+            </li>
+        </ul>
+
+        <div class="d-flex justify-content-center">
+            <div id="PaginationElement"></div>
+            <pagination-controls class="pagination" nextLabel="Siguiente" previousLabel="Anterior" responsive="true"
+                (pageChange)="p = $event">
+            </pagination-controls>
+        </div>
+        <table></table>
+    </div>
+</div>

@@ -42,3 +42,12 @@
       font-size: large;
       font-weight: bold;
   }
+/**/
+  .img-slider {
+    widows: 100%;
+    opacity: 0.3;
+  }
+
+  .img-slider:hover {
+    opacity: 0.5;
+  }
